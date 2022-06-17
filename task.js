@@ -7,7 +7,6 @@ function solveEquation(a, b, c) {
   let D = Math.pow(b,2) - 4*a*c;
   let x1, x2;
 
-
   if (D > 0){
     x1 = (-b + Math.sqrt(D) )/(2*a);
     x2 = (-b - Math.sqrt(D) )/(2*a);
@@ -46,13 +45,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   }
 
   body = amount - contribution;
-  
   months = (date.getFullYear() - new Date().getFullYear()) * 12 + date.getMonth() - new Date().getMonth();
   let P = percent / 12 / 100;
   totalAmount = body * (P + (P / (Math.pow(1 + P,months) - 1))) * months;
   
-  
-
-
   return totalAmount.toFixed(2);
 }
